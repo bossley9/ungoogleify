@@ -1,6 +1,10 @@
 # Ungoogleify
 
-Ungoogleify is a project designed to convert files exported from [Google Takeout](https://takeout.google.com/) into a more UNIX-friendly format.
+Ungoogleify is a project designed to convert files exported from [Google Takeout](https://takeout.google.com/) into a more UNIX-friendly format. Specifically, it will:
+
+* remove spaces from file names
+* lowercase file names
+* name photos using ISO 8601 date formats
 
 ## Motivation
 

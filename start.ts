@@ -22,7 +22,9 @@ try {
 }
 
 try {
-	Ungoogleify(inputDir, outputDir)
+	const inDir = inputDir.replace(/\/$/, '')
+	const outDir = outputDir.replace(/\/$/, '')
+	Ungoogleify(inDir, outDir)
 } catch (error) {
 	console.error(
 		'%cAn unexpected error occurred.',
