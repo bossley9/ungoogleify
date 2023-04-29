@@ -1,5 +1,6 @@
 import { assert } from 'std/testing/asserts.ts'
 import { Slugify } from '@/utils/slugify.ts'
+import { CopyAvoidCollisions } from '@/utils/files.ts'
 
 type ImageMetadata = {
   photoTakenTime?: {
@@ -52,14 +53,12 @@ export async function ConvertAlbum(albumDir: string, outputDir: string) {
 
       const outFile = dateDir + '/' + formattedDate + '.' + fileExt
 
-      // TODO suppress collisions
-      Deno.copyFile(inFile, outFile)
+      CopyAvoidCollisions(inFile, outFile)
     } catch {
       // metadata does not exist for image
       await Deno.mkdir(unknownDir, { recursive: true })
 
-      // TODO suppress collisions
-      Deno.copyFile(
+      CopyAvoidCollisions(
         albumDir + '/' + fileEntry.name,
         unknownDir + '/' + Slugify(albumName) + '-' +
           fileEntry.name.replace(/\s+/g, '-'),
