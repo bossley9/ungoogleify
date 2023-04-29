@@ -9,9 +9,9 @@ Ungoogleify is a project designed to convert files exported from [Google Takeout
 
 ## Motivation
 
-I've been trying to move all my data out of Google - in particular, my hundreds of thousands of photos and videos stored in Google Photos. I need some automated script to convert all of my media into a more user-friendly format.
+I've been trying to move all my data out of Google - in particular, the hundreds of thousands of photos and videos I have accumulated over time in Google Photos. I wanted to automate converting all of my exported media into a more user-friendly format.
 
-I've also been looking for an excuse to play around with Deno's runtime and import system. I haven't really touched it since it first was announced.
+I've also been looking for an excuse to play around with [Deno](https://deno.com/runtime)'s runtime and import system. I haven't touched it since it first was announced in 2018.
 
 ## Features
 
