@@ -1,0 +1,17 @@
+{
+  "imports": {
+    "std/": "https://deno.land/std@0.185.0/",
+    "@/": "./src/"
+  },
+  "tasks": {
+    "ungoogleify": "deno run --allow-read --allow-write start.ts"
+  },
+  "fmt": {
+    "options": {
+      "useTabs": true,
+      "indentWidth": 2,
+      "singleQuote": true,
+      "semiColons": false
+    }
+  }
+}
