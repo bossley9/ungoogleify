@@ -39,8 +39,14 @@ export async function ConvertAlbum(albumDir: string, outputDir: string) {
         throw new Error('invalid photo timestamp')
       }
 
-      const year = date.toLocaleDateString('en', { year: 'numeric' })
-      const month = date.toLocaleDateString('en', { month: '2-digit' })
+      const year = date.toLocaleDateString('en', {
+        timeZone: 'UTC',
+        year: 'numeric',
+      })
+      const month = date.toLocaleDateString('en', {
+        timeZone: 'UTC',
+        month: '2-digit',
+      })
       const formattedDate = date.toISOString().substring(0, 19) + 'Z' // remove milliseconds
 
       const dateDir = outputDir + '/' + year + '/' + month
