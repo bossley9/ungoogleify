@@ -6,6 +6,7 @@ export async function Ungoogleify(inputDir: string, outputDir: string) {
     `%cUngoogleifying ${inputDir} into ${outputDir}.`,
     'color: cyan',
   )
+  await Deno.remove(outputDir, { recursive: true })
   await Deno.mkdir(outputDir, { recursive: true })
 
   try {
