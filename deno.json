@@ -8,7 +8,7 @@
   },
   "fmt": {
     "options": {
-      "useTabs": true,
+      "useTabs": false,
       "indentWidth": 2,
       "singleQuote": true,
       "semiColons": false
