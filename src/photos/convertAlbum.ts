@@ -25,6 +25,7 @@ export async function ConvertAlbum(albumDir: string, outputDir: string) {
     }
 
     const inFile = albumDir + '/' + fileEntry.name
+    console.log(`\tConverting file ${inFile}`)
 
     try {
       const metadata = await getMetadata(inFile)
