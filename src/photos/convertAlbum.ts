@@ -88,7 +88,11 @@ async function hasEditedVariant(file: string) {
 
 async function getMetadata(file: string): Promise<ImageMetadata> {
   try {
-    const metadataFile = file + '.json'
+    const lastPathIndex = file.lastIndexOf('/') + 1
+    // Google trims photo file names longer than
+    // 46 characters when generating metadata files
+    const metadataFile = file.slice(0, lastPathIndex + 46) + '.json'
+
     await Deno.stat(metadataFile)
     return JSON.parse(
       await Deno.readTextFile(metadataFile),
